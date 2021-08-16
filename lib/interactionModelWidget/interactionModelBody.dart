@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:task1/interactionModelWidget/absordWidget.dart';
 import 'package:task1/interactionModelWidget/dismissible.dart';
+import 'package:task1/interactionModelWidget/dragTarget.dart';
+import 'package:task1/interactionModelWidget/draggable.dart';
+import 'package:task1/interactionModelWidget/draggableScrollableSheet.dart';
+import 'package:task1/interactionModelWidget/gestureDetector.dart';
+import 'package:task1/interactionModelWidget/ignorePointer.dart';
+import 'package:task1/interactionModelWidget/interactiveViewer.dart';
+import 'package:task1/interactionModelWidget/longPressDraggable.dart';
+import 'package:task1/interactionModelWidget/scrollable.dart';
 
 class InteractionModelWidgetList extends StatelessWidget {
   // This widget is the root of your application.
@@ -141,7 +149,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DragTargetWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -175,7 +189,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DraggableWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -209,7 +229,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DraggableScrollableSheetWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -243,7 +269,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => GestureDetectorWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -277,7 +309,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => IgnorePointerWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -311,7 +349,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InteractiveViewerWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -345,7 +389,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LongPressDraggableWidgetDetails())
+                  );
+                },
               ),
             ),
           ],
@@ -379,7 +429,13 @@ class WidgetLists extends StatelessWidget{
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ScrollableWidgetDetails())
+                  );
+                },
               ),
             ),
           ],

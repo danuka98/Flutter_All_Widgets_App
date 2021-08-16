@@ -7,6 +7,7 @@ import 'package:task1/assetsImagesIconsWidget/assertsImagesIconsBody.dart';
 import 'package:task1/asyncWidget/asyncBody.dart';
 import 'package:task1/basicWidget/basicBody.dart';
 import 'package:task1/interactionModelWidget/interactionModelBody.dart';
+import 'package:task1/layoutWidget/layoutWidgetBody.dart';
 import 'package:task1/paintingAndEffectsWidget/paintingAndEffectsWidgetsBody.dart';
 import 'package:task1/textWidget/textWidgetBody.dart';
 
@@ -47,10 +48,10 @@ class getListView extends StatelessWidget {
         AsyncWidgets(context),
         BasicsWidgets(context),
         InputWidgets(context),
-        //InteractionModelsWidgets(context),
+        InteractionModelsWidgets(context),
         StylingWidgets(context),
         TextWidgets(context),
-        // LayoutWidgets(context),
+        LayoutWidgets(context),
         // MaterialComponentsWidgets(context),
         PaintingAndEffectsWidgets(context),
         // ScrollingWidgets(context),
@@ -365,7 +366,13 @@ class getListView extends StatelessWidget {
                   child: IconButton(
                     icon: const Icon(Icons.arrow_forward_ios),
                     color: Colors.white,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LayoutWidgetList()),
+                      );
+                    },
                   ),
                 ),
               ],
