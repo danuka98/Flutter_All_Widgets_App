@@ -33,6 +33,12 @@ import 'package:task1/layoutWidget/silver/cupertinoSliverNavigationBar.dart';
 import 'package:task1/layoutWidget/silver/customScrollView.dart';
 import 'package:task1/layoutWidget/silver/sliverAppBar.dart';
 import 'package:task1/layoutWidget/silver/sliverChildBuilderDelegate.dart';
+import 'package:task1/layoutWidget/silver/sliverChildListDelegate.dart';
+import 'package:task1/layoutWidget/silver/sliverFixedExtentList.dart';
+import 'package:task1/layoutWidget/silver/sliverGrid.dart';
+import 'package:task1/layoutWidget/silver/sliverPadding.dart';
+import 'package:task1/layoutWidget/silver/sliverPersistentHeader.dart';
+import 'package:task1/layoutWidget/silver/sliverToBoxAdapter.dart';
 import 'package:task1/layoutWidget/sizedBox.dart';
 import 'package:task1/layoutWidget/sizedOverflowBox.dart';
 import 'package:task1/paintingAndEffectsWidget/transform.dart';
@@ -95,8 +101,13 @@ class WidgetLists extends StatelessWidget{
         CustomScrollViewWidget(context),
         SliverAppBarWidget(context),
         SliverChildBuilderDelegateWidget(context),
-        //SliverChildDelegateWidget(context),
-        //SliverFixedExtentListWidget(context),
+        SliverChildListDelegateWidget(context),
+        SliverFixedExtentListWidget(context),
+        SliverGridWidget(context),
+        SliverListWidget(context),
+        SliverPaddingWidget(context),
+        SliverPersistentHeaderWidget(context),
+        SliverToBoxAdapterWidget(context),
       ],
     );
   }
@@ -1567,7 +1578,7 @@ class WidgetLists extends StatelessWidget{
     ),
   );
 
-  Widget SliverChildDelegateWidget(BuildContext context) => Container(
+  Widget SliverChildListDelegateWidget(BuildContext context) => Container(
     height: 70,
     child: Card(
       shape: RoundedRectangleBorder(
@@ -1579,7 +1590,7 @@ class WidgetLists extends StatelessWidget{
         child: Row(
           children: [
             Text(
-              'SliverChildDelegate Widget',
+              'SliverChildListDelegate Widget',
               textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 18,
@@ -1588,14 +1599,14 @@ class WidgetLists extends StatelessWidget{
               ),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 100),
+              margin: const EdgeInsets.only(left: 70),
               child: IconButton(
                 icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
+                    MaterialPageRoute(builder: (context) => SliverChildListDelegateWidgetDetails()),
                   );
                 },
               ),
@@ -1634,7 +1645,202 @@ class WidgetLists extends StatelessWidget{
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SliverAppBarWidgetDetails()),
+                    MaterialPageRoute(builder: (context) => SliverFixedExtentListWidgetDetails()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget SliverGridWidget(BuildContext context) => Container(
+    height: 70,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Colors.green[600],
+      child: Padding(
+        padding: EdgeInsets.all(13),
+        child: Row(
+          children: [
+            Text(
+              'SliverGrid Widget',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 180),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SliverGridWidgetDetails()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget SliverListWidget(BuildContext context) => Container(
+    height: 70,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Colors.green[600],
+      child: Padding(
+        padding: EdgeInsets.all(13),
+        child: Row(
+          children: [
+            Text(
+              'SliverList Widget',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 182),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget SliverPaddingWidget(BuildContext context) => Container(
+    height: 70,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Colors.green[600],
+      child: Padding(
+        padding: EdgeInsets.all(13),
+        child: Row(
+          children: [
+            Text(
+              'SliverPadding Widget',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 145),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SliverPaddingWidgetDetails()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget SliverPersistentHeaderWidget(BuildContext context) => Container(
+    height: 70,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Colors.green[600],
+      child: Padding(
+        padding: EdgeInsets.all(13),
+        child: Row(
+          children: [
+            Text(
+              'SliverPersistentHeader Widget',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 70),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SliverPersistentHeaderWidgetDetails()),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+
+  Widget SliverToBoxAdapterWidget(BuildContext context) => Container(
+    height: 70,
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      color: Colors.green[600],
+      child: Padding(
+        padding: EdgeInsets.all(13),
+        child: Row(
+          children: [
+            Text(
+              'SliverToBoxAdapter Widget',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 100),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_forward_ios),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SliverToBoxAdapterWidgetDetails()),
                   );
                 },
               ),
