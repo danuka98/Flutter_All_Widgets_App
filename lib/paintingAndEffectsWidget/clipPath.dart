@@ -26,7 +26,7 @@ class WidgetLists extends StatelessWidget{
         child: SizedBox(
           width: 320,
           height: 240,
-          child: Image.network('https://res.cloudinary.com/dx7npz85q/image/upload/v1629797369/samples/animals/three-dogs.jpg',fit: BoxFit.cover,),
+          child: Image.asset('assets/images/1.jpg',fit: BoxFit.cover,),
         ),
       ),
     );

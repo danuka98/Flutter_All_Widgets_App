@@ -23,8 +23,8 @@ class WidgetLists extends StatelessWidget{
     return Padding(
       padding: const EdgeInsets.all(50),
       child: ClipOval(
-        child: Image.network(
-            'https://res.cloudinary.com/dx7npz85q/image/upload/v1629797369/samples/animals/three-dogs.jpg',
+        child: Image.asset(
+            'assets/images/1.jpg',
             fit: BoxFit.fill),
       ),
     );

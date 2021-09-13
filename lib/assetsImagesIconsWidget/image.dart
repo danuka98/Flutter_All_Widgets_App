@@ -19,7 +19,7 @@ class WidgetLists extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return Image(
-      image: NetworkImage('https://res.cloudinary.com/dx7npz85q/image/upload/v1629797369/samples/animals/three-dogs.jpg'),
+      image: AssetImage('assets/images/1.jpg'),
     );
   }
 }
