@@ -7,7 +7,7 @@ class InteractiveViewerWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('InteractiveViewer Widget'),
       ),
       body: WidgetLists(),
     );

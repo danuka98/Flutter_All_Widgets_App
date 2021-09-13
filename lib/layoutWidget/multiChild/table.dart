@@ -7,7 +7,7 @@ class TableWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Table Widget'),
       ),
       body: WidgetLists(),
     );

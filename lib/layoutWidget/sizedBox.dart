@@ -7,7 +7,7 @@ class SizedBoxWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('SizedBox Widget'),
       ),
       body: WidgetLists(),
     );

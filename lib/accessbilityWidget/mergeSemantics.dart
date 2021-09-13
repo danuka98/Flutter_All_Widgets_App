@@ -7,7 +7,7 @@ class MergeSemanticsWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Merge Semantics'),
       ),
       body: WidgetLists(),
     );

@@ -7,7 +7,7 @@ class CenterWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Center Widget'),
       ),
       body: WidgetLists(),
     );

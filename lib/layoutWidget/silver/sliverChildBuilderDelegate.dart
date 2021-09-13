@@ -7,7 +7,7 @@ class SliverChildBuilderDelegateWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('SliverChildBuilderDelegate Widget'),
       ),
       body: WidgetLists(),
     );

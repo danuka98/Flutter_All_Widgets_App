@@ -25,7 +25,7 @@ class WidgetLists extends StatelessWidget{
           pinned: true,
           expandedHeight: 250.0,
           flexibleSpace: FlexibleSpaceBar(
-            title: Text('Demo'),
+            title: Text('CustomScrollView Widget'),
           ),
         ),
         SliverGrid(gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(

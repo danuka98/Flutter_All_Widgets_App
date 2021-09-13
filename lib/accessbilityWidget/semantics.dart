@@ -7,7 +7,7 @@ class SemanticsWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Semantics Widget'),
       ),
       body: WidgetLists(),
     );

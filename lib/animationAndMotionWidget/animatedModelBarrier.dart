@@ -7,7 +7,7 @@ class AnimatedModelBarrierWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Animated ModalBarrier Widget'),
       ),
       body: WidgetLists(),
     );

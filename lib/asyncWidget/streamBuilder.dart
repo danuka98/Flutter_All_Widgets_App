@@ -8,7 +8,7 @@ class StreamBuilderWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Stream Builder Widget'),
       ),
       body: WidgetLists(),
     );

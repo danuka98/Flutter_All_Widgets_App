@@ -7,7 +7,7 @@ class GestureDetectorWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('GestureDetector Widget'),
       ),
       body: WidgetLists(),
     );

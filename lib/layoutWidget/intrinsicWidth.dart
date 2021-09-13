@@ -7,7 +7,7 @@ class IntrinsicWidthWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('IntrinsicWidth Widget'),
       ),
       body: WidgetLists(),
     );

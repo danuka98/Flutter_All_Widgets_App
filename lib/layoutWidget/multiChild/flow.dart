@@ -7,7 +7,7 @@ class FlowWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Flow Widget'),
       ),
       body: WidgetLists(),
     );

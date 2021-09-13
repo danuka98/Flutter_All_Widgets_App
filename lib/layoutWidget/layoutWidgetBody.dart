@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:task1/StylingWidget/padding.dart';
 import 'package:task1/animationAndMotionWidget/animatedAlign.dart';
 import 'package:task1/basicWidget/column.dart';
 import 'package:task1/basicWidget/container.dart';
 import 'package:task1/basicWidget/row.dart';
+import 'package:task1/constants.dart';
 import 'package:task1/layoutWidget/align.dart';
 import 'package:task1/layoutWidget/aspectRatio.dart';
 import 'package:task1/layoutWidget/baseLine.dart';
@@ -50,7 +52,7 @@ class LayoutWidgetList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Layout Widgets'),
       ),
       body: WidgetLists(),
     );
@@ -111,780 +113,744 @@ class WidgetLists extends StatelessWidget{
       ],
     );
   }
-  Widget Single_ChildLayoutWidget() => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.blue,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Single Child Layout Widgets',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+  Widget Single_ChildLayoutWidget() {
+    return Container(
+      height: 70,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        color: Colors.blue,
+        child: Padding(
+          padding: EdgeInsets.all(13),
+          child: Row(
+            children: [
+              Text(
+                'Single Child Layout Widgets',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 90),
-              child: Icon(
-                Icons.widgets,
-                color: Colors.white,
-                size: 35,
+              Container(
+                margin: const EdgeInsets.only(left: 90),
+                child: Icon(
+                  Icons.widgets,
+                  color: Colors.white,
+                  size: 35,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AlignWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Align Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AlignWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AlignWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Align Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 205),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AlignWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AspectRatioWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'AspectRatio Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AspectRatioWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AspectRatioWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'AspectRatio Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 150),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AspectRatioWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget BaselineWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'BaseLine Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget BaselineWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BaseLineWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'BaseLine Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 175),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BaseLineWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget CenterWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Center Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget CenterWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CenterWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Center Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 195),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CenterWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ConstrainedBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'ConstrainedBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ConstrainedBoxWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ConstrainedBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'ConstrainedBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 120),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ConstrainedBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ContainerWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Container Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ContainerWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ContainerWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Container Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 170),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ContainerWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget CustomSingleChildLayoutWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'CustomSingleChildLayout Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget CustomSingleChildLayoutWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CustomSingleChildLayoutWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'CustomSingleChildLayout Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 40),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomSingleChildLayoutWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ExpandedWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Expanded Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ExpandedWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ExpandedWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Expanded Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 170),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ExpandedWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget FittedBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'FittedBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget FittedBoxWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FittedBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'FittedBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 172),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FittedBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget FractionalSizedWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'FractionalSized Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget FractionalSizedWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => FractionalSizedWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'FractionalSized Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 125),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FractionalSizedWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget IntrinsicHeightWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'IntrinsicHeight Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget IntrinsicHeightWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => IntrinsicHeightWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'IntrinsicHeight Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 130),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => IntrinsicHeightWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget IntrinsicWidthWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'IntrinsicWidth Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget IntrinsicWidthWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => IntrinsicWidthWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'IntrinsicWidth Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 138),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => IntrinsicWidthWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget LimitedBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'LimitedBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget LimitedBoxWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LimitedBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'LimitedBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 160),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LimitedBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget OffstageWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Offstage Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget OffstageWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => OffStageWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Offstage Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 180),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OffStageWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget OverflowBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'OverflowBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget OverflowBoxWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => OverflowBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'OverflowBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 145),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => OverflowBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget PaddingWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Padding Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget PaddingWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => PaddingWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Padding Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 182),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PaddingWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SizedBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SizedBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SizedBoxWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SizedBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SizedBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 175),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SizedBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SizedOverflowBoxWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SizedOverflowBox Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SizedOverflowBoxWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SizedOverflowBoxWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SizedOverflowBox Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 105),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SizedOverflowBoxWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget TransformWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Transform Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget TransformWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TransformWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Transform Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 168),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TransformWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
   Widget Multi_ChildLayoutWidget() => Container(
     height: 70,
@@ -920,473 +886,449 @@ class WidgetLists extends StatelessWidget{
     ),
   );
 
-  Widget ColumnWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Column Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ColumnWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ColumnWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Column Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 190),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ColumnWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget CustomMultiChildLayoutWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'CustomMultiChildLayout Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget CustomMultiChildLayoutWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CustomMultiChildLayoutWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'CustomMultiChildLayout Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 53),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomMultiChildLayoutWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget FlowWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Flow Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget FlowWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FlowWidgetDetails()),
+            );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Flow Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 215),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FlowWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget GridViewWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'GridView Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget GridViewWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => GridViewWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'GridView Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 180),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GridViewWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget IndexedStackWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'IndexedStack Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget IndexedStackWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => IndexedStackWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'IndexedStack Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 143),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => IndexedStackWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget LayoutBuilderWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'LayoutBuilder Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget LayoutBuilderWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LayoutBuilderWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'LayoutBuilder Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 142),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LayoutBuilderWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ListBodyWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'ListBody Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ListBodyWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ListBodyWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'ListBody Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 185),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ListBodyWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ListViewWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'ListView Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget ListViewWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ListViewWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'ListView Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 185),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ListViewWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget RowWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Row Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget RowWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => RowWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Row Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 220),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => RowWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget StackWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Stack Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget StackWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => StackWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Stack Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 208),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => StackWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget TableWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Table Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget TableWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => TableWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Table Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 210),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TableWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget WrapWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Wrap Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget WrapWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WrapWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Wrap Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 215),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => WrapWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
   Widget SilverLayoutWidget() => Container(
     height: 70,
@@ -1422,432 +1364,410 @@ class WidgetLists extends StatelessWidget{
     ),
   );
 
-  Widget CupertinoSliverNavigationBarWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'CupertinoSliverNavigationBar Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget CupertinoSliverNavigationBarWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CupertinoSliverNavigationBarWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'CupertinoSliverNavigationBar Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 15),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CupertinoSliverNavigationBarWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget CustomScrollViewWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'CustomScrollView Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget CustomScrollViewWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'CustomScrollView Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 110),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverAppBarWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverAppBar Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverAppBarWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverAppBarWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverAppBar Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 152),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverAppBarWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverChildBuilderDelegateWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverChildBuilderDelegate Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverChildBuilderDelegateWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverChildBuilderDelegateWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverChildBuilderDelegate Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 42),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverChildBuilderDelegateWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverChildListDelegateWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverChildListDelegate Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverChildListDelegateWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverChildListDelegateWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverChildListDelegate Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 70),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverChildListDelegateWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverFixedExtentListWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverFixedExtentList Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverFixedExtentListWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverFixedExtentListWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverFixedExtentList Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 90),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverFixedExtentListWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverGridWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverGrid Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverGridWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverGridWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverGrid Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 180),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverGridWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverListWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverList Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverListWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverList Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 182),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => CustomScrollViewWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverPaddingWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverPadding Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverPaddingWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverPaddingWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverPadding Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 145),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverPaddingWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverPersistentHeaderWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverPersistentHeader Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverPersistentHeaderWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverPersistentHeaderWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverPersistentHeader Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 70),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverPersistentHeaderWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SliverToBoxAdapterWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.green[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'SliverToBoxAdapter Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget SliverToBoxAdapterWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SliverToBoxAdapterWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Green600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'SliverToBoxAdapter Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 100),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SliverToBoxAdapterWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

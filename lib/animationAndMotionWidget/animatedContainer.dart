@@ -8,7 +8,7 @@ class AnimatedContainerWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Animated Container Widget'),
       ),
       body: WidgetLists(),
     );

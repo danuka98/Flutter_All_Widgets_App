@@ -7,7 +7,7 @@ class DragTargetWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('DragTarget Widget'),
       ),
       body: WidgetLists(),
     );

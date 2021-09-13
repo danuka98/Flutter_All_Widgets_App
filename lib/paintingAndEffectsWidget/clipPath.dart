@@ -9,7 +9,7 @@ class ClipPathWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('ClipPath Widget'),
       ),
       body: WidgetLists(),
     );
@@ -26,7 +26,7 @@ class WidgetLists extends StatelessWidget{
         child: SizedBox(
           width: 320,
           height: 240,
-          child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRFU7U2h0umyF0P6E_yhTX45sGgPEQAbGaJ4g&usqp=CAU',fit: BoxFit.cover,),
+          child: Image.network('https://res.cloudinary.com/dx7npz85q/image/upload/v1629797369/samples/animals/three-dogs.jpg',fit: BoxFit.cover,),
         ),
       ),
     );

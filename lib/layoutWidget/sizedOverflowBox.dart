@@ -7,7 +7,7 @@ class SizedOverflowBoxWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('SizedOverflowBox Widget'),
       ),
       body: WidgetLists(),
     );

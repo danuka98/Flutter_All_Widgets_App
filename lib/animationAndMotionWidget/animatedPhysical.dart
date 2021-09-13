@@ -7,7 +7,7 @@ class AnimatedPhysicalWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Animated PhysicalModel Widget'),
       ),
       body: WidgetLists(),
     );

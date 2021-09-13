@@ -7,7 +7,7 @@ class RichTextWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Rich Text Widget'),
       ),
       body: WidgetLists(),
     );

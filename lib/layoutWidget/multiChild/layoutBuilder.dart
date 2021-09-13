@@ -7,7 +7,7 @@ class LayoutBuilderWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('LayoutBuilder Widget'),
       ),
       body: WidgetLists(),
     );

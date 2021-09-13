@@ -7,7 +7,7 @@ class SliverPersistentHeaderWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('SliverPersistentHeader Widget'),
       ),
       body: WidgetLists(),
     );

@@ -7,7 +7,7 @@ class ExcludeSemanticsWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Exclude Semantics'),
       ),
       body: WidgetLists(),
     );

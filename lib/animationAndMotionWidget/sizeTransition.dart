@@ -8,7 +8,7 @@ class SizeTransitionWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Size Transition Widget'),
       ),
       body: WidgetLists(),
     );

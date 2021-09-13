@@ -7,7 +7,7 @@ class BaseLineWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('BaseLine Widget'),
       ),
       body: WidgetLists(),
     );

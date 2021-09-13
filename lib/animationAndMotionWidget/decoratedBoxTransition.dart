@@ -8,7 +8,7 @@ class DecoratedBoxTransitionWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('DecoratedBox Transition Widget'),
       ),
       body: WidgetLists(),
     );

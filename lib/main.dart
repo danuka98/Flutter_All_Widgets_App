@@ -6,8 +6,10 @@ import 'package:task1/animationAndMotionWidget/animationAndMotionBody.dart';
 import 'package:task1/assetsImagesIconsWidget/assertsImagesIconsBody.dart';
 import 'package:task1/asyncWidget/asyncBody.dart';
 import 'package:task1/basicWidget/basicBody.dart';
+import 'package:task1/constants.dart';
 import 'package:task1/interactionModelWidget/interactionModelBody.dart';
 import 'package:task1/layoutWidget/layoutWidgetBody.dart';
+import 'package:task1/materialComponents/meterialComponentsWidgetsBody.dart';
 import 'package:task1/paintingAndEffectsWidget/paintingAndEffectsWidgetsBody.dart';
 import 'package:task1/textWidget/textWidgetBody.dart';
 
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.grey[900],
       ),
       home: Scaffold(
         appBar: AppBar(
@@ -52,21 +54,30 @@ class getListView extends StatelessWidget {
         StylingWidgets(context),
         TextWidgets(context),
         LayoutWidgets(context),
-        // MaterialComponentsWidgets(context),
+        MaterialComponentsWidgets(context),
         PaintingAndEffectsWidgets(context),
         // ScrollingWidgets(context),
       ],
     );
   }
 
-
-  Widget accessibilityWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget accessibilityWidgets(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AccessibilityWidgetList())
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.blue[800],
+          color: Constants.Blue800,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -77,36 +88,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 150),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AccessibilityWidgetList())
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget AnimationAndMotionWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget AnimationAndMotionWidgets(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AnimationWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.pink[600],
+          color: Constants.Pink600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -117,36 +126,35 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 73),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => AnimationWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget AssetsImagesAndIconsWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget AssetsImagesAndIconsWidgets(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    AssertsImagesIconWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.deepOrange[600],
+          color: Constants.DeepOrange600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -157,37 +165,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 50),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                AssertsImagesIconWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget AsyncWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget AsyncWidgets(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => AsyncWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.red[600],
+          color: Constants.Red600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -198,36 +203,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 205),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => AsyncWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget BasicsWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget BasicsWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => BasicWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.orange[600],
+          color: Constants.Orange600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -238,36 +241,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 200),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => BasicWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget InputWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget InputWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => InputWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.lime[800],
+          color: Constants.Lime800,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -278,36 +279,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 212),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => InputWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget InteractionModelsWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget InteractionModelsWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => InteractionModelWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.deepPurpleAccent,
+          color: Constants.DeepPurpleAccent,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -318,36 +317,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 102),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => InteractionModelWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget LayoutWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget LayoutWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => LayoutWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.green[600],
+          color: Constants.Green600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -358,36 +355,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 200),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LayoutWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget MaterialComponentsWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget MaterialComponentsWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MaterialComponentsWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.teal[600],
+          color: Constants.Teal600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -398,30 +393,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 80),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {},
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget PaintingAndEffectsWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget PaintingAndEffectsWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PaintingAndEffectsWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.cyan[600],
+          color: Constants.Cyan600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -432,70 +431,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 95),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => PaintingAndEffectsWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget ScrollingWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget StylingWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => StylingWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.indigo[400],
-          child: Padding(
-            padding: EdgeInsets.all(13),
-            child: Row(
-              children: [
-                Text(
-                  'Scrolling Widgets',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 185),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-
-  Widget StylingWidgets(BuildContext context) => Container(
-        height: 70,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          color: Colors.brown[600],
+          color: Constants.Brown600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -506,36 +469,34 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 200),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => StylingWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget TextWidgets(BuildContext context) => Container(
-        height: 70,
+  Widget TextWidgets(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => TextWidgetList()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.grey[600],
+          color: Constants.Grey600,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -546,26 +507,49 @@ class getListView extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 222),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => TextWidgetList()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
+
+  // Widget ScrollingWidgets(BuildContext context) => Container(
+  //   height: 70,
+  //   child: Card(
+  //     shape: RoundedRectangleBorder(
+  //       borderRadius: BorderRadius.circular(15),
+  //     ),
+  //     color: Colors.indigo[400],
+  //     child: Padding(
+  //       padding: EdgeInsets.all(13),
+  //       child: Row(
+  //         children: [
+  //           Text(
+  //             'Scrolling Widgets',
+  //             textAlign: TextAlign.left,
+  //             style: TextStyle(
+  //               fontSize: 18,
+  //               fontWeight: FontWeight.bold,
+  //               color: Colors.white,
+  //             ),
+  //           ),
+  //           Container(
+  //             margin: const EdgeInsets.only(left: 185),
+  //             child: IconButton(
+  //               icon: const Icon(Icons.arrow_forward_ios),
+  //               color: Colors.white,
+  //               onPressed: () {},
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   ),
+  // );
+
 }

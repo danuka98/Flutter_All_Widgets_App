@@ -8,7 +8,7 @@ class FadeTransitionWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Fade Transition Widget'),
       ),
       body: WidgetLists(),
     );

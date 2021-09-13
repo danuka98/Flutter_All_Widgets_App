@@ -7,7 +7,7 @@ class AbsorbWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Absord Widget'),
       ),
       body: WidgetLists(),
     );

@@ -35,7 +35,7 @@ class _WidgetLists extends State<WidgetLists>{
             floating: _floating,
             expandedHeight: 150,
             flexibleSpace: const FlexibleSpaceBar(
-              title: Text('Sliver App Bar'),
+              title: Text('SliverAppBar Widget'),
               background: FlutterLogo(),
             ),
           ),

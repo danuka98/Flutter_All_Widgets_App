@@ -7,7 +7,7 @@ class MediaQueryWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Media Query Widget'),
       ),
       body: WidgetLists(),
     );

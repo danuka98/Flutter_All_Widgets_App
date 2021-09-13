@@ -7,7 +7,7 @@ class AnimatedOpacityWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Animated Opacity Widget'),
       ),
       body: WidgetLists(),
     );

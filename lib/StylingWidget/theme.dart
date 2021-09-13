@@ -17,7 +17,7 @@ class ThemeWidgetDetails extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
-          title: const Text('Theme Data Example'),
+          title: const Text('Theme Widget'),
         ),
         floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),

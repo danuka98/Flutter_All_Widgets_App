@@ -7,7 +7,7 @@ class AppbarWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('AppBar'),
+        title: Text('Appbar Widget'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.add_alert),

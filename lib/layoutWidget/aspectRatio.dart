@@ -7,7 +7,7 @@ class AspectRatioWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('AspectRatio Widget'),
       ),
       body: WidgetLists(),
     );

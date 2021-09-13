@@ -20,6 +20,7 @@ import 'package:task1/animationAndMotionWidget/rotationTransition.dart';
 import 'package:task1/animationAndMotionWidget/scaleTransition.dart';
 import 'package:task1/animationAndMotionWidget/sizeTransition.dart';
 import 'package:task1/animationAndMotionWidget/slideTransition.dart';
+import 'package:task1/constants.dart';
 
 class AnimationWidgetList extends StatelessWidget {
   // This widget is the root of your application.
@@ -28,7 +29,7 @@ class AnimationWidgetList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Animation And Motion Widgets'),
       ),
       body: WidgetLists(),
     );
@@ -46,14 +47,14 @@ class WidgetLists extends StatelessWidget{
         AnimatedContainerWidget(context),
         AnimatedCrossWidget(context),
         AnimatedDefaultTextStyleWidget(context),
-        AnimatedListStateWidget(context),
+        //AnimatedListStateWidget(context),
         AnimatedModalBarrierWidget(context),
         AnimatedOpacityWidget(context),
         AnimatedPhysicalModelWidget(context),
         AnimatedPositionedWidget(context),
         AnimatedSizeWidget(context),
         AnimatedWidgetWidget(context),
-        AnimatedWidgetBaseStateWidget(context),
+        //AnimatedWidgetBaseStateWidget(context),
         DecoratedBoxTransitionWidget(context),
         FadeTransitionWidget(context),
         HeroWidget(context),
@@ -66,844 +67,833 @@ class WidgetLists extends StatelessWidget{
     );
   }
 
-  Widget AnimatedAlignWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Align Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedAlignWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedAlignWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Align Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 125),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedAlignWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedBuilderWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Builder Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 110),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedBuilderWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedContainerWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Container Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedBuilderWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedBuilderWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Builder Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 90),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedContainerWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedCrossWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Cross Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 120),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedCrossWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedDefaultTextStyleWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Default TextStyle Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedContainerWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedContainerWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Container Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 30),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedDefaultTextStyleWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedListStateWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated ListState Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 95),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => AnimatedListStateWidgetDetails())
-                  // );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedModalBarrierWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated ModalBarrier Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedCrossWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedCrossWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Cross Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 62),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedModelBarrierWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedOpacityWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Opacity Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 105),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedOpacityWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedPhysicalModelWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated PhysicalModel Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedDefaultTextStyleWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedDefaultTextStyleWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Default TextStyle Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 50),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedPhysicalWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedPositionedWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Positioned Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 82),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedPositionedWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedSizeWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Size Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+  Widget AnimatedListStateWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        color: Constants.Pink600,
+        child: Padding(
+          padding: EdgeInsets.all(13),
+          child: Row(
+            children: [
+              Text(
+                'Animated ListState Widget',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Constants.White,
+                ),
               ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 135),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedSizeWidgetDetails())
-                  );
-                },
+              Container(
+                margin: EdgeInsets.only(left: mediaQueryData.size.width*0.275),
+                // child: IconButton(
+                //   icon: const Icon(Icons.arrow_forward_ios),
+                //   color: Constants.White,
+                //   onPressed: () {
+                //     // Navigator.push(
+                //     //     context,
+                //     //     MaterialPageRoute(
+                //     //         builder: (context) => AnimatedListStateWidgetDetails())
+                //     // );
+                //   },
+                // ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget AnimatedWidgetWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 175),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AnimatedWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget AnimatedWidgetBaseStateWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Animated WidgetBaseState Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedModalBarrierWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedModelBarrierWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated ModalBarrier Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 32),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => AnimatedWidgetBaseStateWidgetDetails())
-                  // );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget DecoratedBoxTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'DecoratedBox Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 55),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DecoratedBoxTransitionWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget FadeTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Fade Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedOpacityWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedOpacityWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Opacity Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 130),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => FadeTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget HeroWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Hero Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 215),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => HeroWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget PositionedTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Positioned Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedPhysicalModelWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedPhysicalWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated PhysicalModel Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 80),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => PositionedTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget RotationTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Rotation Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 100),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => RotationTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget ScaleTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Scale Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedPositionedWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedPositionedWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Positioned Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 122),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ScaleTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget SizeTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Size Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 130),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SizeTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
 
-  Widget SlideTransitionWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.pink[600],
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Slide Transition Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AnimatedSizeWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedSizeWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Size Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 125),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SlideTransitionWidgetDetails()),
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
+
+
+  Widget AnimatedWidgetWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AnimatedWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Animated Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  // Widget AnimatedWidgetBaseStateWidget(BuildContext context) {
+  //   MediaQueryData mediaQueryData = MediaQuery.of(context);
+  //   return Container(
+  //     height: mediaQueryData.size.height*0.1,
+  //     child: Card(
+  //       shape: RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.circular(15),
+  //       ),
+  //       color: Constants.Pink600,
+  //       child: Padding(
+  //         padding: EdgeInsets.all(13),
+  //         child: Row(
+  //           children: [
+  //             Text(
+  //               'Animated WidgetBaseState Widget',
+  //               textAlign: TextAlign.left,
+  //               style: TextStyle(
+  //                 fontSize: 18,
+  //                 fontWeight: FontWeight.bold,
+  //                 color: Constants.White,
+  //               ),
+  //             ),
+  //             Container(
+  //               margin: EdgeInsets.only(left: mediaQueryData.size.width*0.11),
+  //               // child: IconButton(
+  //               //   icon: const Icon(Icons.arrow_forward_ios),
+  //               //   color: Constants.White,
+  //               //   onPressed: () {
+  //               //     // Navigator.push(
+  //               //     //     context,
+  //               //     //     MaterialPageRoute(
+  //               //     //         builder: (context) => AnimatedWidgetBaseStateWidgetDetails())
+  //               //     // );
+  //               //   },
+  //               // ),
+  //             ),
+  //           ],
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
+
+
+  Widget DecoratedBoxTransitionWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DecoratedBoxTransitionWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'DecoratedBox Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget FadeTransitionWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FadeTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Fade Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget HeroWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => HeroWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Hero Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget PositionedTransitionWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => PositionedTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Positioned Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget RotationTransitionWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => RotationTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Rotation Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget ScaleTransitionWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ScaleTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Scale Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget SizeTransitionWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SizeTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Size Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+
+  Widget SlideTransitionWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SlideTransitionWidgetDetails()),
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.Pink600,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Slide Transition Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.White,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
 
 }

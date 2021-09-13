@@ -7,7 +7,7 @@ class FutureBuilderWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Future Builder Widget'),
       ),
       body: WidgetLists(),
     );

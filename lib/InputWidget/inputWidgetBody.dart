@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task1/InputWidget/form.dart';
 import 'package:task1/InputWidget/rawKeyboardListner.dart';
+import 'package:task1/constants.dart';
 
 class InputWidgetList extends StatelessWidget {
   // This widget is the root of your application.
@@ -9,7 +10,7 @@ class InputWidgetList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Input Widgets'),
       ),
       body: WidgetLists(),
     );
@@ -21,55 +22,69 @@ class WidgetLists extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        AutocompleteWidget(context),
         FormWidget(context),
         FormFieldWidget(context),
-        RawKeyboardListenerWidget(context),
+        //RawKeyboardListenerWidget(context),
+        //AutocompleteWidget(context),
       ],
     );
   }
 
-  Widget AutocompleteWidget(BuildContext context) => Container(
-        height: 70,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          color: Colors.lime[800],
-          child: Padding(
-            padding: EdgeInsets.all(13),
-            child: Row(
-              children: [
-                Text(
-                  'Auto complete Widget',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+  Widget AutocompleteWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return  Container(
+      height: mediaQueryData.size.height*0.1,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        color: Constants.Lime800,
+        child: Padding(
+          padding: EdgeInsets.all(13),
+          child: Row(
+            children: [
+              Text(
+                'Auto complete Widget',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Constants.White,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 135),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
+              ),
+              // Container(
+              //   margin: const EdgeInsets.only(left: 135),
+              //   child: IconButton(
+              //     icon: const Icon(Icons.arrow_forward_ios),
+              //     color: Colors.white,
+              //     onPressed: () {},
+              //   ),
+              // ),
+            ],
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget FormWidget(BuildContext context) => Container(
-        height: 70,
+
+  Widget FormWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FormWidgetDetails()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.lime[800],
+          color: Constants.Lime800,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -80,36 +95,35 @@ class WidgetLists extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 210),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => FormWidgetDetails()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
 
-  Widget FormFieldWidget(BuildContext context) => Container(
-        height: 70,
+  }
+
+  Widget FormFieldWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => FormWidgetDetails()),
+          );
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          color: Colors.lime[800],
+          color: Constants.Lime800,
           child: Padding(
             padding: EdgeInsets.all(13),
             child: Row(
@@ -120,67 +134,60 @@ class WidgetLists extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(left: 165),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => FormWidgetDetails()),
-                      );
-                    },
+                    color: Constants.White,
                   ),
                 ),
               ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
 
-  Widget RawKeyboardListenerWidget(BuildContext context) => Container(
-        height: 70,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          color: Colors.lime[800],
-          child: Padding(
-            padding: EdgeInsets.all(13),
-            child: Row(
-              children: [
-                Text(
-                  'RawKeyboardListener Widget',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+
+  Widget RawKeyboardListenerWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        color: Constants.Lime800,
+        child: Padding(
+          padding: EdgeInsets.all(13),
+          child: Row(
+            children: [
+              Text(
+                'RawKeyboardListener Widget',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Constants.White,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 75),
-                  child: IconButton(
-                    icon: const Icon(Icons.arrow_forward_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                RawKeyboardListnerWidgetDetails()),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
+              ),
+              // Container(
+              //   margin: EdgeInsets.only(left: mediaQueryData.size.width*0.222),
+              //   child: IconButton(
+              //     icon: const Icon(Icons.arrow_forward_ios),
+              //     color: Constants.White,
+              //     onPressed: () {
+              //       Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) =>
+              //                 RawKeyboardListnerWidgetDetails()),
+              //       );
+              //     },
+              //   ),
+              // ),
+            ],
           ),
         ),
-      );
+      ),
+    );
+
+  }
 }

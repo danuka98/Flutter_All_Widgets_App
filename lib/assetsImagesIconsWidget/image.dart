@@ -7,7 +7,7 @@ class ImageWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Image Widget'),
       ),
       body: WidgetLists(),
     );
@@ -19,7 +19,7 @@ class WidgetLists extends StatelessWidget{
   Widget build(BuildContext context) {
 
     return Image(
-      image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'),
+      image: NetworkImage('https://res.cloudinary.com/dx7npz85q/image/upload/v1629797369/samples/animals/three-dogs.jpg'),
     );
   }
 }

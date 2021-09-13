@@ -9,7 +9,7 @@ class BackdropWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Backdrop Widget'),
       ),
       body: WidgetLists(),
     );

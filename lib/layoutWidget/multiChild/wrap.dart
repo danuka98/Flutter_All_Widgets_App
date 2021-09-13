@@ -7,7 +7,7 @@ class WrapWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Wrap Widget'),
       ),
       body: WidgetLists(),
     );

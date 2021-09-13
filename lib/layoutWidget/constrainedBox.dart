@@ -7,7 +7,7 @@ class ConstrainedBoxWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('ConstrainedBox Widget'),
       ),
       body: WidgetLists(),
     );

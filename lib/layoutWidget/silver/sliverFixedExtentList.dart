@@ -7,7 +7,7 @@ class SliverFixedExtentListWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('SliverFixedExtentList Widget'),
       ),
       body: WidgetLists(),
     );

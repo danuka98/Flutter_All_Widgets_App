@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task1/constants.dart';
 import 'package:task1/interactionModelWidget/absordWidget.dart';
 import 'package:task1/interactionModelWidget/dismissible.dart';
 import 'package:task1/interactionModelWidget/dragTarget.dart';
@@ -17,7 +18,7 @@ class InteractionModelWidgetList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Interaction Models Widgets'),
       ),
       body: WidgetLists(),
     );
@@ -44,403 +45,384 @@ class WidgetLists extends StatelessWidget{
     );
   }
 
-  Widget AbsordWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Absord Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget AbsordWidget(BuildContext context){
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => AbsorbWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Absord Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 192),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AbsorbWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget DismissibleWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Dismissible Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget DismissibleWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DismissibleWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Dismissible Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 155),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DismissibleWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget DragTargetWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'DragTarget Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget DragTargetWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DragTargetWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'DragTarget Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 160),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DragTargetWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget DraggableWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Draggable Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 170),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DraggableWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
+  Widget DraggableWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DraggableWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Draggable Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
 
-  Widget DraggableScrollableSheetWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'DraggableScrollableSheet Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 40),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DraggableScrollableSheetWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget GestureDetectorWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'GestureDetector Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget DraggableScrollableSheetWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DraggableScrollableSheetWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'DraggableScrollableSheet Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 120),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => GestureDetectorWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget IgnorePointerWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'IgnorePointer Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget GestureDetectorWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => GestureDetectorWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'GestureDetector Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 140),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => IgnorePointerWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget InteractiveViewerWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'InteractiveViewer Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget IgnorePointerWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => IgnorePointerWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'IgnorePointer Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 110),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => InteractiveViewerWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget LongPressDraggableWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'LongPressDraggable Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget InteractiveViewerWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => InteractiveViewerWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'InteractiveViewer Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 85),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => LongPressDraggableWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
-  Widget ScrollableWidget(BuildContext context) => Container(
-    height: 70,
-    child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      color: Colors.deepPurpleAccent,
-      child: Padding(
-        padding: EdgeInsets.all(13),
-        child: Row(
-          children: [
-            Text(
-              'Scrollable Widget',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+  Widget LongPressDraggableWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => LongPressDraggableWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'LongPressDraggable Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 175),
-              child: IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
-                color: Colors.white,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ScrollableWidgetDetails())
-                  );
-                },
-              ),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
+
+  Widget ScrollableWidget(BuildContext context) {
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
+    return Container(
+      height: mediaQueryData.size.height*0.1,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ScrollableWidgetDetails())
+          );
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          color: Constants.DeepPurpleAccent,
+          child: Padding(
+            padding: EdgeInsets.all(13),
+            child: Row(
+              children: [
+                Text(
+                  'Scrollable Widget',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

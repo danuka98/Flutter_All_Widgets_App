@@ -8,7 +8,7 @@ class HeroWidgetDetails extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        title: Text('Widget List'),
+        title: Text('Hero Widget'),
       ),
       body: WidgetLists(),
     );
